@@ -12,21 +12,22 @@ Firstly, let us create a Sample PHP application.
 <?php
 echo "Hello World!";
 echo "The Best PHP Examples";
-?>```
+?>
+```
 
 Func.yaml
 The func.yaml file contains the configuration for your function project. Here we are using the runtime as Docker.
-
-```#Func.yaml
+```
+#Func.yaml
 schema_version: 20180708
 name: revfunc
 version: 0.0.1
 runtime: docker```
-
+```
 Dockerfile
 
 Docker builds images by reading the instructions in Dockerfile, which contains all commands needed to build a given image. We will be using HotWrap binary in order to run the PHP code.
-
+```
 #Dockerfile
 FROM alpine:latest
 FROM php:7.4-cli
@@ -38,22 +39,24 @@ WORKDIR /usr/src/myapp
 CMD [ "php", "./sample.php" ]
 # Update entrypoint to use hotwrap, this will wrap your command
 ENTRYPOINT ["/hotwrap"]
-
+```
 Go ahead and deploy the Function using Cloud Shell:
 
 Setup fn CLI on Cloud Shell
-
+```
 fn list context
 fn use context us-ashburn-1
 fn update context oracle.compartment-id <<Compartment ID>>
 fn update context registry iad.ocir.io/[tenancyname]/[repo-name-prefix]
 docker login -u 'natdcshjumpstartprod/oracleidentitycloudservice/[email]' iad.ocir.io
 fn list apps
-
+```
 Create, deploy, and invoke your function
-
+```
 cd Hotwrap
 fn -v deploy --app <<Application Name>>
-
+```
 Here is the output:
+```
 fn invoke <<Application name>> revfunc
+```
