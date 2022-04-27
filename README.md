@@ -1,5 +1,4 @@
-**Invoke PHP script deployed to Oracle Cloud Functions using Fn HotWrap
-**
+*Invoke PHP script deployed to Oracle Cloud Functions using Fn HotWrap*
 
 Oracle Functions is a serverless platform that lets developers create, run, and scale applications without managing any infrastructure. Functions are based on the open-source Fn Project and the code based on Functions typically runs for a short duration, and customers need to pay only for the resources they consume.
 
