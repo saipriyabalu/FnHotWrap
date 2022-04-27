@@ -2,26 +2,26 @@
 
 Oracle Functions is a serverless platform that lets developers create, run, and scale applications without managing any infrastructure. Functions are based on the open-source Fn Project and the code based on Functions typically runs for a short duration, and customers need to pay only for the resources they consume.
 
-The Fn Project provides function development kits (FDKs) for Java, Python, Node, Go, and Ruby, and in addition, lets you bring your own Dockerfile. Here we are trying to run a PHP application using Oracle Functions.
-Fn HotWrap is a beta tool that lets you run Unix commands as functions. Here is the procedure I followed to run a HelloWorld program built in PHP using Oracle Cloud Functions.
+The Fn Project provides function development kits (FDKs) for Java, Python, Node, Go, and Ruby, and in addition, lets you bring your own Dockerfile. Here we are trying to run a PHP application using Oracle Functions. Fn HotWrap is a beta tool that lets you run Unix commands as functions. Here is the procedure I followed to run a HelloWorld program built in PHP using Oracle Cloud Functions.
 
 Sample.php
+
 Firstly, let us create a Sample PHP application.
 
-#Sample.php 
+```#Sample.php 
 <?php
 echo "Hello World!";
 echo "The Best PHP Examples";
-?>
+?>```
 
 Func.yaml
 The func.yaml file contains the configuration for your function project. Here we are using the runtime as Docker.
 
-#Func.yaml
+```#Func.yaml
 schema_version: 20180708
 name: revfunc
 version: 0.0.1
-runtime: docker
+runtime: docker```
 
 Dockerfile
 
